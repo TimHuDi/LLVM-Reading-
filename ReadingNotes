@@ -1,3 +1,5 @@
 1.LLVM philosophy: everything is a library.
 Throughout, LLVM emphasizes the philosophy that everything is a library, leaving a relatively small amount of code that is not immediately reusable and is exclusive of a particular tool.
 对于LLVM的设计思想的理解。比如LLVM的CommandLine Library。在设计各种tool的时候，在命令行处理这个功能，都是复用的这个库。
+2.-###                    Print (but do not run) the commands to run for this compilation
+通过这个选项可以看到clang driver 的工作过程。可以看到编译的时候调用了clang -cc1 和 ld
