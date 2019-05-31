@@ -12,7 +12,7 @@ Stage Selection Option:
 (1)-E           : Stop after the preprocessing stage; do not run the compiler proper. The output
                   is in the form of preprocessed source code, which is sent to the standard output.
                   Input files that don’t require preprocessing are ignored.
-(2)syntax-only  : Check the syntax of the input source code, report any warnings or errors, and stop.       
+(2)-fsyntax-only  : Check the syntax of the input source code, report any warnings or errors, and stop.       
 (3)-S           : Stop after the stage of compilation proper; do not assemble. The output is in
                   the form of an assembler code file for each non-assembler input file specified.
                   By default, the assembler file name for a source file is made by replacing the
