@@ -7,3 +7,20 @@ Stage Selection Options:
 (4)-c           ：Run all the above, plus the assembler, generationg a target ".o" object file.
 (5)             : If no stage selection option, all stage above are run, and the linker is run to combine the results into an executable 
                   or shared library.
+GCC:
+Stage Selection Option:
+(1)-E           : Stop after the preprocessing stage; do not run the compiler proper. The output
+                  is in the form of preprocessed source code, which is sent to the standard output.
+                  Input files that don’t require preprocessing are ignored.
+(2)-S           : Stop after the stage of compilation proper; do not assemble. The output is in
+                  the form of an assembler code file for each non-assembler input file specified.
+                  By default, the assembler file name for a source file is made by replacing the
+                  suffix ‘.c’, ‘.i’, etc., with ‘.s’.
+                  Input files that don’t require compilation are ignored.
+(3)-c           : Compile or assemble the source files, but do not link. The linking stage simply
+                  is not done. The ultimate output is in the form of an object file for each source file.
+                  By default, the object file name for a source file is made by replacing the suffix
+                  ‘.c’, ‘.i’, ‘.s’, etc., with ‘.o’.
+                  Unrecognized input files, not requiring compilation or assembly, are ignored.
+(4)             : If no stage selection option, all stage above are run, and the linker is run to combine the results into an executable 
+                  or shared library.           
