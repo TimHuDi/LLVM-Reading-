@@ -8,3 +8,7 @@ Some clang command line options are driver-only options, some are frontend-only 
 If you want to use a frontend-only option("a ''-cc1'' option"), for example ''-ast-dump'', then you can run ''clang -Xclang <option>...''to force driver pass ''<option>'' to ''clang -cc1''.
 4. Features and Goals of Clang driver?
 (1) GCC Compatibility ;(2)Flexible ;(3)Low Overhead;(4)Simple.
+5. overview of the entire llvm infrastructure.
+(1) compiler driver: clang  2.2G ,carry on the entire compilation.
+(2) standalone tools: opt 1.3G, llc 1.2G, and so on.
+(3) all tools reuse libraries.
