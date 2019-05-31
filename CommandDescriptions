@@ -1,0 +1,9 @@
+Clang:
+Stage Selection Options:
+(1)-E           : Run the preprocessor stage.
+(2)-fsyntax-only: Run the preprocessor,parser and type checking stages
+(3)-S           : Run the previous stages as well as LLVM generation and optimization stages and target-specific code generation,
+                  producing an assembly file.
+(4)-c           ：Run all the above, plus the assembler, generationg a target ".o" object file.
+(5)             : If no stage selection option, all stage above are run, and the linker is run to combine the results into an executable 
+                  or shared library.
