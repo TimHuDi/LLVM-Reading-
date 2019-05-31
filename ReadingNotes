@@ -3,3 +3,8 @@ Throughout, LLVM emphasizes the philosophy that everything is a library, leaving
 对于LLVM的设计思想的理解。比如LLVM的CommandLine Library。在设计各种tool的时候，在命令行处理这个功能，都是复用的这个库。
 2.-###                    Print (but do not run) the commands to run for this compilation
 通过这个选项可以看到clang driver 的工作过程。可以看到编译的时候调用了clang -cc1 和 ld
+3. "clang" is the driver, "clang -cc1" is the frontend. The driver invokes the frontend with options appropriate for your system.Why not use clang -cc1 directly?
+Some clang command line options are driver-only options, some are frontend-only options. Frontend-only options are intended to be used by clang developers.
+If you want to use a frontend-only option("a ''-cc1'' option"), for example ''-ast-dump'', then you can run ''clang -Xclang <option>...''to force driver pass ''<option>'' to ''clang -cc1''.
+4. Features and Goals of Clang driver?
+(1) GCC Compatibility ;(2)Flexible ;(3)Low Overhead;(4)Simple.
