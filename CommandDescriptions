@@ -25,3 +25,6 @@ Stage Selection Option:
                   Unrecognized input files, not requiring compilation or assembly, are ignored.
 (5)             : If no stage selection option, all stage above are run, and the linker is run to combine the results into an executable 
                   or shared library.           
+Stage Selection Option Summary:
+                              -S is used to generate assembly code. -c is used to generate object code, but not link. 
+                              no option is run all the stage.
