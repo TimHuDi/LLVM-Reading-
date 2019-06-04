@@ -28,3 +28,21 @@ Stage Selection Option:
 Stage Selection Option Summary:
                               -S is used to generate assembly code. -c is used to generate object code, but not link. 
                               no option is run all the stage.
+Language Selection and Mode Options
+(1) -x           ： Treat subsequent input files as having type language.
+    eg: clang -x c++ helloworld.cpp -lstdc++,  clang driver use -x option to compile C++ file.
+(2)-std=         : Specify the language standard to compile for.
+    eg: clang -x c++ -std=c++11 helloworld.cpp -lstdc++, specify the ISO C++ 2011 with amendments.
+(3）-stdlib=     : Specify the C++ standard library to use;supported options are libstdc++ and libc++.If not specified, platform default 
+                   will be used.
+    note:libc++ is an implementation of the C++ standard library, targeting C++11, C++14 and above.
+         http://libcxx.llvm.org/
+    eg: clang++ -stdlib=libc++ helloworld.cpp -lc++abi, use the libc++ library.
+         
+         
+         
+         
+         
+         
+         
+         
