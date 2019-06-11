@@ -12,3 +12,10 @@ If you want to use a frontend-only option("a ''-cc1'' option"), for example ''-a
 (1) compiler driver: clang  2.2G ,carry on the entire compilation.
 (2) standalone tools: opt 1.3G, llc 1.2G, and so on.
 (3) all tools reuse libraries.
+6. interacting with the compiler driver?
+(1）the first tool the Clang driver calls is the clang tool itself with the -cc1 parameter,
+which disables the compiler-driver mode while enabling the compiler mode.Since LLVM components are libraries,
+the clang -cc1 is linked with the IR generation, the code generator for the target macine, and assembler libraries.
+Therefore,after parsing, clang -cc1 itselfis able to call other libraries and supervice the compilation pipeline in 
+the memory until the object file is ready.
+(2) Afterwards, the Clang driver invokes the linker, which is an external tool, to generate the executable file.
