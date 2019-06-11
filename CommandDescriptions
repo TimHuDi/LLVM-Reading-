@@ -39,6 +39,12 @@ Language Selection and Mode Options
     note:libc++ is an implementation of the C++ standard library, targeting C++11, C++14 and above.
          http://libcxx.llvm.org/
     eg: clang++ -stdlib=libc++ helloworld.cpp -lc++abi, use the libc++ library.
+(4)-rtlib=          : Specify the compiler runtime library to use; supported options are libgcc and compiler-rt.
+                      The GNU Compiler Collection uses a special library called libgcc during code generation, 
+                      which contains shared code that would be inefficient to duplicate every time 
+                      as well as auxiliary helper routines and runtime support.
+(5)-ffreestanding   : Indicate that the file should be compiled for a freestanding,not a hosted.
+                 
 GCC
 Language Selection and Mode Options
 (1)-x           :                          Specify the language of the following input files
@@ -53,8 +59,12 @@ Language Selection and Mode Options
     note:
             g++ -nostdinc++ -I<libcxx-install-prefix>/include/c++/v1 \
                 helloworld.cpp -nodefaultlibs -lc++ -lc++abi -lm -lc -lgcc_s -lgcc
-         
-         
+（4）no -rtlib  ：                         gcc has no -rtlib.                      
+（5）-ffreestanding:                      Assert that compilation targets a freestanding environment. This implies
+                                         ‘-fno-builtin’. A freestanding environment is one in which the standard
+                                          library may not exist, and program startup may not necessarily be at
+                                          main. The most obvious example is an OS kernel. This is equivalent to
+                                          ‘-fno-hosted’.     
          
          
          
