@@ -19,3 +19,13 @@ the clang -cc1 is linked with the IR generation, the code generator for the targ
 Therefore,after parsing, clang -cc1 itselfis able to call other libraries and supervice the compilation pipeline in 
 the memory until the object file is ready.
 (2) Afterwards, the Clang driver invokes the linker, which is an external tool, to generate the executable file.
+7. llvm standalone tools?
+(1) opt;(2) llc;(3)llvm-mc；（4）lli;(5)llvm-link;(6)llvm-as(7)llvm-dis.
+8. what is llc?
+This is a tool that converts the LLVM bitcode to target-machine assembly language file or object file via a specific backend.
+You can pass arguments to select an optimization level, to turn on debugging options, and to enable or disable target-specific
+optimizations.
+9. -filetype=obj parameter?
+The -filetype=obj parameter specifies an object file output instead of the target assembly file.
+10. what is llvm-link?
+This tool links together several LLVM bitcodes to produce a single LLVM bitcode that encompasses all inputs.
