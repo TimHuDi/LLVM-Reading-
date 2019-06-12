@@ -44,6 +44,7 @@ Language Selection and Mode Options
                       which contains shared code that would be inefficient to duplicate every time 
                       as well as auxiliary helper routines and runtime support.
 (5)-ffreestanding   : Indicate that the file should be compiled for a freestanding,not a hosted.
+(6)-fno-builtin     : disable special handling and optimization of builtin functions like "strlen" and "malloc".
                  
 GCC
 Language Selection and Mode Options
@@ -65,6 +66,16 @@ Language Selection and Mode Options
                                           library may not exist, and program startup may not necessarily be at
                                           main. The most obvious example is an OS kernel. This is equivalent to
                                           ‘-fno-hosted’.     
+(6)-fno-builtin:                          GCC normally generates special code to handle certain built-in functions more
+                                          efficiently; for instance, calls to alloca may become single instructions which
+                                          adjust the stack directly, and calls to memcpy may become inline copy loops.
+                                          The resulting code is often both smaller and faster, but since the function
+                                          calls no longer appear as such, you cannot set a breakpoint on those calls,
+                                          nor can you change the behavior of the functions by linking with a different
+                                          library. In addition, when a function is recognized as a built-in function, GCC
+                                          may use information about that function to warn about problems with calls to
+                                          that function, or to generate more efficient code, even if the resulting code still
+                                          contains calls to that function.                                          
          
          
          
