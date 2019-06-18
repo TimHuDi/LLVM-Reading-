@@ -48,6 +48,13 @@ Language Selection and Mode Options
 (7)-fmath-errno     : set errno after calling math functions that are executed with a single instruction.
 (8)-fpascal-strings : Enable support for Pascal-style strings with "\\pfoo".
 (9)-fms-extensions  : Enable support for Microsoft extensions.
+(10)-fmsc-version   : Set _MSC_VER. Defaults to 1300 on Windows. Not set otherwise.
+(11)-fborland-extensions: Enable support for Borland extensions.
+(12)-fwritable-strings:   Make all string literals default to writable. This disable uniquing of strings and other optimization.
+(13)-flax-vector-conversions: Allow loose type checking rules for implicit vector conversions.
+(14)-fblocks        :     Enable the "Block" language feature.
+(15)-fobjc-abi-version:   Select the Objective-C ABI version to use. 
+                          Available versions are 1 (legacy “fragile” ABI), 2 (non-fragile ABI 1), and 3 (non-fragile ABI 2)
                  
 GCC
 Language Selection and Mode Options
@@ -91,7 +98,21 @@ Language Selection and Mode Options
                                           with this option. See Section 6.63 [Unnamed struct/union fields within
                                           structs/unions], page 809, for details.
                                           Note that this option is off for all targets but x86 targets using ms-abi.
+(9)-fwritable-strings:                    GCC no longer accepts the -fwritable-strings option.
+                                          Use named character arrays when you need a writable string.
+                                          https://www.gnu.org/software/gcc/gcc-4.0/changes.html
+(10)-flax-vector-conversions:             Allow implicit conversions between vectors with differing numbers of elements
+                                          and/or incompatible element types. This option should not be used for new code.  
+(11)-fobjc-abi-version:                   Use version n of the Objective-C ABI for the selected runtime. This option is
+                                          currently supported only for the NeXT runtime. In that case, Version 0 is the
+                                          traditional (32-bit) ABI without support for properties and other Objective-
+                                          C 2.0 additions. Version 1 is the traditional (32-bit) ABI with support for
+                                          properties and other Objective-C 2.0 additions. Version 2 is the modern (64-bit)
+                                          ABI. If nothing is specified, the default is Version 0 on 32-bit target machines,
+                                          and Version 2 on 64-bit target machines.
                                          
+                                         
+                                     
          
          
          
