@@ -115,7 +115,7 @@ Target Selection Options:
 (1) -arch:                                Specify the architecture to build for.
 (2)-mmacosx:                              When building for Mac OSX, specify the minimum version supported by your application.
 (3)-miphoneos-version-min:                When building for iPhone OS, specify the minimum version supported by your application.
-(4)-march=                :               Speicify that Clang should generate code for a specific processor family member and later.ch
+(4)-march=                :               Speicify that Clang should generate code for a specific processor family member and later.
 
 Gcc
 Target Selection Options:
