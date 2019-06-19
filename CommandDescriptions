@@ -110,7 +110,25 @@ Language Selection and Mode Options
                                           properties and other Objective-C 2.0 additions. Version 2 is the modern (64-bit)
                                           ABI. If nothing is specified, the default is Version 0 on 32-bit target machines,
                                           and Version 2 on 64-bit target machines.
-                                         
+Clang  
+Target Selection Options:
+(1) -arch:                                Specify the architecture to build for.
+(2)-mmacosx:                              When building for Mac OSX, specify the minimum version supported by your application.
+(3)-miphoneos-version-min:                When building for iPhone OS, specify the minimum version supported by your application.
+(4)-march=                :               Speicify that Clang should generate code for a specific processor family member and later.ch
+
+Gcc
+Target Selection Options:
+(1) -arch:                                -arch选项只在Darwin平台有效，，即mac电脑上有用.
+                                          (https://blog.csdn.net/listener51/article/details/80468021)
+(2)-mmacosx-version-min=version:          The earliest version of MacOS X that this executable will run on is version.
+                                          Typical values of version include 10.1, 10.2, and 10.3.9.
+                                          If the compiler was built to use the system’s headers by default, then the default
+                                          for this option is the system version on which the compiler is running, otherwise
+                                          the default is to make choices that are compatible with as many systems and
+                                          code bases as possible.
+(3)-march=  :                             Generate instructions for the machine type cpu-type.
+                                          (https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html#x86-Options)
                                          
                                      
          
