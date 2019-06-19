@@ -130,8 +130,13 @@ Target Selection Options:
 (3)-march=  :                             Generate instructions for the machine type cpu-type.
                                           (https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html#x86-Options)
                                          （https://stackoverflow.com/questions/16273561/gcc-generic-march-for-all-the-x64-platforms）
-                                         
-                                     
+                                           If the ‘-Q’ option appears on the command line before the ‘--help=’ option, then
+                                          the descriptive text displayed by ‘--help=’ is changed. Instead of describing
+                                          the displayed options, an indication is given as to whether the option is enabled,
+                                          disabled or set to a specific value (assuming that the compiler knows this at the
+                                          point where the ‘--help=’ option is used).
+                                          根据-Q 选项的作用，我们可以通过-Q选项来看Gcc的默认值。-march 在X86-64上的默认值是X86-64。
+                                          如果march=native 就是传入的机器类型，比如haswell.
          
          
          
