@@ -129,6 +129,7 @@ Target Selection Options:
                                           code bases as possible.
 (3)-march=  :                             Generate instructions for the machine type cpu-type.
                                           (https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html#x86-Options)
+                                         （https://stackoverflow.com/questions/16273561/gcc-generic-march-for-all-the-x64-platforms）
                                          
                                      
          
