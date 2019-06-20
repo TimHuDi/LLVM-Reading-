@@ -1,5 +1,5 @@
+1.Stage Selection options:
 Clang:
-Stage Selection Options:
 (1)-E           : Run the preprocessor stage.
 (2)-fsyntax-only: Run the preprocessor,parser and type checking stages
 (3)-S           : Run the previous stages as well as LLVM generation and optimization stages and target-specific code generation,
@@ -8,7 +8,6 @@ Stage Selection Options:
 (5)             : If no stage selection option, all stage above are run, and the linker is run to combine the results into an executable 
                   or shared library.
 GCC:
-Stage Selection Option:
 (1)-E           : Stop after the preprocessing stage; do not run the compiler proper. The output
                   is in the form of preprocessed source code, which is sent to the standard output.
                   Input files that don’t require preprocessing are ignored.
@@ -28,8 +27,9 @@ Stage Selection Option:
 Stage Selection Option Summary:
                               -S is used to generate assembly code. -c is used to generate object code, but not link. 
                               no option is run all the stage.
+                              
+2.Language Selection and Mode Options
 Clang                              
-Language Selection and Mode Options
 (1) -x           ： Treat subsequent input files as having type language.
     eg: clang -x c++ helloworld.cpp -lstdc++,  clang driver use -x option to compile C++ file.
 (2)-std=         : Specify the language standard to compile for.
@@ -57,7 +57,6 @@ Language Selection and Mode Options
                           Available versions are 1 (legacy “fragile” ABI), 2 (non-fragile ABI 1), and 3 (non-fragile ABI 2)
                  
 GCC
-Language Selection and Mode Options
 (1)-x           :                          Specify the language of the following input files
                                            Permissible languages include: c c++ assembler none
                                            'none' means revert to the default behavior of
@@ -110,15 +109,15 @@ Language Selection and Mode Options
                                           properties and other Objective-C 2.0 additions. Version 2 is the modern (64-bit)
                                           ABI. If nothing is specified, the default is Version 0 on 32-bit target machines,
                                           and Version 2 on 64-bit target machines.
+
+3.Target Selection Options:
 Clang  
-Target Selection Options:
 (1) -arch:                                Specify the architecture to build for.
 (2)-mmacosx:                              When building for Mac OSX, specify the minimum version supported by your application.
 (3)-miphoneos-version-min:                When building for iPhone OS, specify the minimum version supported by your application.
 (4)-march=                :               Speicify that Clang should generate code for a specific processor family member and later.
 
 Gcc
-Target Selection Options:
 (1) -arch:                                -arch选项只在Darwin平台有效，，即mac电脑上有用.
                                           (https://blog.csdn.net/listener51/article/details/80468021)
 (2)-mmacosx-version-min=version:          The earliest version of MacOS X that this executable will run on is version.
@@ -137,6 +136,22 @@ Target Selection Options:
                                           point where the ‘--help=’ option is used).
                                           根据-Q 选项的作用，我们可以通过-Q选项来看Gcc的默认值。-march 在X86-64上的默认值是X86-64。
                                           如果march=native 就是传入的机器类型，比如haswell.
+4. Code Generation Options
+Clang
+(1)-O0:                                   Means "no optimization": this level compiles the fastest 
+                                          and generates the most debuggable code.
+(2)-O1:                                   somewhere between option '-O0' and option '-O2'
+(3)-O2:                                   Moderate level of optimization which enables most optimizations.
+(4)-O3:                                   Like :option '-O2', except that it enables optimizations that take longer to perform 
+                                          or that may generate larger code(in an attempt to makethe program run faster).
+(5)-Ofast:                                Enabels all the optimizations from '-O3' along with other aggressive optimizations that 
+                                          may violate strict compliance with language standards.
+(6)-Os:                                   like '-O2' with extra optimization to reduce code size.
+(7)-Oz:                                   Like '-Os',but reduces code size further.
+(8)-Og:                                   Like '-O1'. In future versions, this option might disable different optimizations 
+                                          in order to improve debuggability.
+(9)-O:                                    Equivalent to option '-O2'
+(10)-O4 and higher:                       Equivalent to -O3.
          
          
          
