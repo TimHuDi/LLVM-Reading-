@@ -153,6 +153,13 @@ Clang
 (9)-O:                                    Equivalent to option '-O2'
 (10)-O4 and higher:                       Equivalent to -O3.
 优化选项的默认值是O0.
+(11)-g:					  Generate debug information.
+(12)-fnostandalone-debug:		  Optimizations to reduce the size of debug information in the binary.
+(13)-fstandalone-debug:			  turns off these optimizations.
+(14)-fexceptions:			  Enable generation of unwind information.
+(15)-ftrapv:				  Generate code to catch integer overflow errors.
+(16)-fvisibility			  This flag sets the default visibility level.
+
 
 Gcc
 (1)-O0:                                   Reduce compilation time and make debugging produce the expected results.
@@ -179,6 +186,15 @@ Gcc
                                           compiler passes that collect debug information are disabled at ‘-O0’. 
 (8)-O:                                    Equivalent to '-O1'
 优化选项的默认值是O0
+(9)-g:					  Produce debugging information in the operating system's native format.
+(10)-fexceptions:			  Enable exception handling.
+(11)-ftrapv:				  This option generates traps for signed overflow on addition, subtraction,multiplication operations.
+(12)-fvisibility:			  Set the default ELF image symbol visibility to the specified option-all symbols are marked with this unless
+					  overriden within the code. Using this feature can very substantially improve linking and load times of shared
+					  libraries produce more optimized code, prevent symbol clashed. It is strongly recommended that you use this in
+					  any shared objects you distribute.This default if '-fvisibility' isn't specified is 'default',which make every 
+					  symbol public.
+
          
          
          
