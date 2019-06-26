@@ -158,7 +158,12 @@ Clang
 (13)-fstandalone-debug:			  turns off these optimizations.
 (14)-fexceptions:			  Enable generation of unwind information.
 (15)-ftrapv:				  Generate code to catch integer overflow errors.
-(16)-fvisibility			  This flag sets the default visibility level.
+(16)-fvisibility:			  This flag sets the default visibility level.
+(17)-fcommon:				  This flag specifies the variable without initializers get common linkage.
+(18)-fno-common:			  This flag specified the variable without initializers get no common linkage.
+(19)-ftls-model:			  Set the default thread-local storage(TLS) model to use thread-local variables.
+(20)-flto:				  Generate output files in LLVM formats, suitable for link time optimization. 
+(21)-emit-llvm:				  The same as flto.
 
 
 Gcc
@@ -194,6 +199,15 @@ Gcc
 					  libraries produce more optimized code, prevent symbol clashed. It is strongly recommended that you use this in
 					  any shared objects you distribute.This default if '-fvisibility' isn't specified is 'default',which make every 
 					  symbol public.
+(13)-fcommon:			  	  In C code, this option controls the placement of global variables defined without an initializers, known as tentative
+					  definitions in the C standard.compilers allocated storage for unitilized global variables in a common block.This is the
+					  behavior specifed by '-fcommon', and is the default for GCC no most targets.
+(14)-fno-common:			  provide the better performance. reference Tentative variable definitions, and -fno-common.
+(15)-ftls-model=:			  Alter the thread-local storage model to be used.
+(16)-flto:			          This option runs the standard link-time optimizer.When invoked with source code, it generates GIMPLE(one of GCC's internal
+					  representations) and writes it to special ELF sections in the object file. When the object files are linked together, all 
+					  the function bodies are read from these ELF sections and instantiated as if they had been part of the same translation unit.
+
 
          
          
